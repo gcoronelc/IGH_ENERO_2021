@@ -8,6 +8,15 @@ package pe.edu.uni.apppedido.service;
  * @facebook www.facebook.com/groups/desarrollasoftware/
  */
 public class PedidoService {
+
+	public PedidoService() {
+		System.out.println("Objeto creado");
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		System.err.println("Memoria liberada");
+	}
 	
 	public double calcImpuesto(double importe){
 		double impuesto;
