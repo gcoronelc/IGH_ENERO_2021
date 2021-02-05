@@ -18,6 +18,20 @@ public class PagoDto {
 	private double renta;
 	private double neto;
 
+	// Constructor por defecto
+	public PagoDto() {
+	}
+
+	// Constructor adicional
+	public PagoDto(int horasDia, int dias, double pagoHora) {
+		this.horasDia = horasDia;
+		this.dias = dias;
+		this.pagoHora = pagoHora;
+	}
+	
+	
+	
+
 	public int getHorasDia() {
 		return horasDia;
 	}

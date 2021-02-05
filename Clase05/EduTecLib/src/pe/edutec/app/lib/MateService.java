@@ -28,7 +28,7 @@ public class MateService {
 
   public int promediar(int n1, int n2, int n3, int n4, int n5) {
     int pr;
-    pr = (n1 + n2 + n3 + n4 + n5) / n5;
+    pr = (n1 + n2 + n3 + n4 + n5) / 5;
     return pr;
   }
 
