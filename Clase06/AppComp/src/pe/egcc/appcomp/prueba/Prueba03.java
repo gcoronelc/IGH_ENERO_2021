@@ -1,7 +1,6 @@
 package pe.egcc.appcomp.prueba;
 
 import pe.egcc.appcomp.model.Item;
-import pe.egcc.appcomp.service.BoletaService;
 import pe.egcc.appcomp.service.CompAbstract;
 import pe.egcc.appcomp.service.FacturaService;
 

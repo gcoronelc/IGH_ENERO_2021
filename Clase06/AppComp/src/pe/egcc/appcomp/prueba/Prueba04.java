@@ -17,7 +17,7 @@ public class Prueba04 {
       Double total = 119.0;
       // Proceso
       CompAbstract service;
-      service = CompFactory.obtenerComp(CompFactory.COMP_BOLETA);
+      service = CompFactory.obtenerComp(CompFactory.COMP_FACTURA);
       Item[] repo = service.procesar(total);
       // Reporte
       for (Item item : repo) {
