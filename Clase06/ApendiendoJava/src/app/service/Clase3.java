@@ -9,4 +9,5 @@ package app.service;
  */
 public class Clase3 extends Clase2{
 
+	
 }
