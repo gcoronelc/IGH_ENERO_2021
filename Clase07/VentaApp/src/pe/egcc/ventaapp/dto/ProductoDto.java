@@ -48,7 +48,7 @@ public class ProductoDto {
 
    @Override
    public String toString() {
-      return this.producto + " - " + this.precio;
+      return this.producto;
    }
    
 }
