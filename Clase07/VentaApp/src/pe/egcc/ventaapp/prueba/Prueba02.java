@@ -21,8 +21,9 @@ public class Prueba02 {
       lista = service.getProductos(categoria);
       // Reporte
       for (ProductoDto dto : lista) {
-         System.out.println(dto.getCategoria() + " - " + dto.getProducto() + " - " + dto.getPrecio());
-      }
+         //System.out.println(dto.getCategoria() + " - " + dto.getProducto() + " - " + dto.getPrecio());
+			System.out.println(dto.toString());
+		}
    }
    
 }
