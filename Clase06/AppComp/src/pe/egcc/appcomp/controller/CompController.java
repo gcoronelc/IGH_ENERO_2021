@@ -4,6 +4,7 @@ import pe.egcc.appcomp.model.Item;
 import pe.egcc.appcomp.service.CompAbstract;
 import pe.egcc.appcomp.service.CompFactory;
 
+
 /**
  *
  * @author Gustavo Coronel
@@ -11,6 +12,7 @@ import pe.egcc.appcomp.service.CompFactory;
  * @email  gcoronelc@gmail.com
  */
 public class CompController {
+	
 
    public String[] obtenerTipos() {
       return CompFactory.obtenerTipos();
