@@ -1,0 +1,34 @@
+-- Parte 1
+-------------------------------------------
+- Archivos Log
+- Pruebas Unitarias
+- Patrones Factory
+- Manejo de Datos Genericos (Generic)
+- Expresiones regulares
+
+
+-- Parte 2
+-------------------------------------------
+- Asociación, Agregación y Composición: 
+  Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
+  
+- Expresiones Lambda y Strem en Java 8: 
+  Jyoti Enrique Rospigliosi Pinedo, ALDAVE HUAMAN FLOR ABIGAIL 
+  
+- Principios SOLID: 
+  ALEC TABOADA TANIGUCHI, CATACORA MAMANI D’ANGELO JOHNNY 
+  
+- Patron DAO: 
+  Breiner Correa, CHOZO SEGOVIA RENZO DANIEL 
+  
+- Manejo de claves seguras en la BD Oracle: 
+  Miguel Ugarte, SARANGO ARAUJO JOHN LEE, UTCAÑE MANCILLA JOSE YAIR 
+
+
+
+
+
+- Manejo de documentos XML: 
+- Patrón Inyección de Dependencias: 
+- Manejo de Datos en Formato JSON: 
+- Patrón facade: 
