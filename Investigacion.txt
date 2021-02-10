@@ -13,7 +13,7 @@
   Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
   
 - Expresiones Lambda y Strem en Java 8: 
-  ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL,
+  ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL
   Jyoti Enrique Rospigliosi Pinedo
   
 - Principios SOLID: 

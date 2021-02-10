@@ -1,0 +1,85 @@
+﻿
+
+C:\Users\Gustavo Coronel>sqlplus /nolog
+
+SQL*Plus: Release 11.2.0.2.0 Production on MiÚ Feb 10 10:33:34 2021
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> conn system/oracle
+Connected.
+SQL> create user appventas identified by secreto;
+
+User created.
+
+SQL> grant connect, resource to appventas;
+
+Grant succeeded.
+
+SQL> conn appventas/secreto
+Connected.
+SQL> show user
+USER is "APPVENTAS"
+SQL> create table cliente(
+  2  idcliente number(8) primary key,
+  3  nombre varchar2(100) not null
+  4  );
+
+Table created.
+
+SQL> insert into appventas values( 1, 'Gustavo' );
+insert into appventas values( 1, 'Gustavo' )
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> insert into cliente values( 1, 'Gustavo' );
+
+1 row created.
+
+SQL> insert into cliente values( 2, 'Karla' );
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from cliente;
+
+ IDCLIENTE
+----------
+NOMBRE
+--------------------------------------------------------------------------------
+         1
+Gustavo
+
+         2
+Karla
+
+
+SQL> set linesize 600
+SQL> select * from cliente;
+
+ IDCLIENTE NOMBRE
+---------- ----------------------------------------------------------------------------------------------------
+         1 Gustavo
+         2 Karla
+
+SQL> desc cliente;
+ Name                                                                                                                                                                                                                                                                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ IDCLIENTE                                                                                                                                                                                                                                                                                                                                                         NOT NULL NUMBER(8)
+ NOMBRE                                                                                                                                                                                                                                                                                                                                                            NOT NULL VARCHAR2(100)
+
+SQL> set linesize 60
+SQL> desc cliente;
+ Name                          Null?    Type
+ ----------------------------- -------- --------------------
+ IDCLIENTE                     NOT NULL NUMBER(8)
+ NOMBRE                        NOT NULL VARCHAR2(100)
+
+SQL>
+
+

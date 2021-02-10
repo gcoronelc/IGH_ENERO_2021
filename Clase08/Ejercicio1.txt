@@ -1,0 +1,11 @@
+﻿
+Esquema: AppVentas
+----------------------------
+- CLIENTE
+- VENTAS
+- DETALLE
+- PRODUCTO
+
+
+
+
