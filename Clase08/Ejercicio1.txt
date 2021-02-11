@@ -1,10 +1,10 @@
 ﻿
 Esquema: AppVentas
 ----------------------------
-- CLIENTE
-- VENTAS
-- DETALLE
-- PRODUCTO
+- CLIENTE 3)
+- VENTAS (3)
+- DETALLE (3 items por venta)
+- PRODUCTO (5)
 
 
 
