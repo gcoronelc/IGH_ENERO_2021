@@ -9,6 +9,7 @@ import java.util.List;
 import pe.igh.app.db.AccesoDB;
 import pe.igh.app.model.Cliente;
 import pe.igh.app.service.spec.ClienteSpec;
+import pe.igh.app.service.spec.RowMapper;
 
 /**
  * @author Eric Gustavo Coronel Castillo
@@ -17,7 +18,7 @@ import pe.igh.app.service.spec.ClienteSpec;
  * @youtube www.youtube.com/c/DesarrollaSoftware
  * @facebook www.facebook.com/groups/desarrollasoftware/
  */
-public class ClienteImpl implements ClienteSpec {
+public class ClienteImpl implements ClienteSpec, RowMapper<Cliente> {
 
 	@Override
 	public Cliente traer(String idCliente) {
@@ -34,16 +35,7 @@ public class ClienteImpl implements ClienteSpec {
 			pstm.setString(1, idCliente);
 			ResultSet rs = pstm.executeQuery();
 			if (rs.next()) {
-				cliente = new Cliente();
-				cliente.setCodigo(rs.getString("chr_cliecodigo"));
-				cliente.setPaterno(rs.getString("vch_cliepaterno"));
-				cliente.setMaterno(rs.getString("vch_cliematerno"));
-				cliente.setNombre(rs.getString("vch_clienombre"));
-				cliente.setDni(rs.getString("chr_cliedni"));
-				cliente.setCiudad(rs.getString("vch_clieciudad"));
-				cliente.setDireccion(rs.getString("vch_cliedireccion"));
-				cliente.setTelefono(rs.getString("vch_clietelefono"));
-				cliente.setEmail(rs.getString("vch_clieemail"));
+				cliente = mapRow(rs);
 			}
 			rs.close();
 			pstm.close();
@@ -83,16 +75,7 @@ public class ClienteImpl implements ClienteSpec {
 			pstm.setString(3, nombre);
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
-				Cliente cliente = new Cliente();
-				cliente.setCodigo(rs.getString("chr_cliecodigo"));
-				cliente.setPaterno(rs.getString("vch_cliepaterno"));
-				cliente.setMaterno(rs.getString("vch_cliematerno"));
-				cliente.setNombre(rs.getString("vch_clienombre"));
-				cliente.setDni(rs.getString("chr_cliedni"));
-				cliente.setCiudad(rs.getString("vch_clieciudad"));
-				cliente.setDireccion(rs.getString("vch_cliedireccion"));
-				cliente.setTelefono(rs.getString("vch_clietelefono"));
-				cliente.setEmail(rs.getString("vch_clieemail"));
+				Cliente cliente = mapRow(rs);
 				lista.add(cliente);
 			}
 			rs.close();
@@ -124,6 +107,21 @@ public class ClienteImpl implements ClienteSpec {
 	@Override
 	public void eliminar(String idCliente) {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	@Override
+	public Cliente mapRow(ResultSet rs) throws SQLException {
+		Cliente cliente = new Cliente();
+		cliente.setCodigo(rs.getString("chr_cliecodigo"));
+		cliente.setPaterno(rs.getString("vch_cliepaterno"));
+		cliente.setMaterno(rs.getString("vch_cliematerno"));
+		cliente.setNombre(rs.getString("vch_clienombre"));
+		cliente.setDni(rs.getString("chr_cliedni"));
+		cliente.setCiudad(rs.getString("vch_clieciudad"));
+		cliente.setDireccion(rs.getString("vch_cliedireccion"));
+		cliente.setTelefono(rs.getString("vch_clietelefono"));
+		cliente.setEmail(rs.getString("vch_clieemail"));
+		return cliente;
 	}
 
 }
