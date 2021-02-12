@@ -6,6 +6,7 @@ pe\igh\app\service\impl\ClienteImpl.class
 prueba\Prueba02.class
 pe\igh\app\service\impl\JdbcUtil.class
 pe\igh\app\service\spec\RowMapper.class
+prueba\Prueba06.class
 pe\igh\app\service\spec\ClienteSpec.class
 pe\igh\app\service\spec\ConsultasSpec.class
 prueba\Prueba01.class

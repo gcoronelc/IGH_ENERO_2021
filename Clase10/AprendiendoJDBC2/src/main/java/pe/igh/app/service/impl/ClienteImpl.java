@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import pe.igh.app.db.AccesoDB;
@@ -96,7 +98,75 @@ public class ClienteImpl implements ClienteSpec, RowMapper<Cliente> {
 
 	@Override
 	public void inertar(Cliente cliente) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		Connection cn = null;
+		try {
+			// Variables
+			String sql, codigo;
+			ResultSet rs;
+			PreparedStatement pstm;
+			Statement stm;
+			int cont, longitud;
+			// Inicio de tx
+			cn = AccesoDB.getConnection();
+			cn.setAutoCommit(false); // Inicia la Tx
+			// Obtener contador de sucursal
+			sql = "select int_contitem, int_contlongitud from contador "
+							+ "where vch_conttabla = 'Cliente' for update";
+			stm = cn.createStatement();
+			rs = stm.executeQuery(sql);
+			rs.next();
+			cont = rs.getInt("int_contitem") + 1;
+			longitud = rs.getInt("int_contlongitud");
+			rs.close();
+			// Crear codigo
+			String formato = "";
+			for (int i = 1; i <= longitud; i++) {
+				formato += "0";
+			}
+			DecimalFormat df = new DecimalFormat(formato);
+			codigo = df.format(cont);
+			// Insertar cliente
+			sql = "insert into cliente(chr_cliecodigo,vch_cliepaterno,vch_cliematerno,"
+							+ "vch_clienombre,chr_cliedni,vch_clieciudad,vch_cliedireccion,"
+							+ "vch_clietelefono,vch_clieemail) values(?,?,?,?,?,?,?,?,?)";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, codigo);
+			pstm.setString(2, cliente.getPaterno());
+			pstm.setString(3, cliente.getMaterno());
+			pstm.setString(4, cliente.getNombre());
+			pstm.setString(5, cliente.getDni());
+			pstm.setString(6, cliente.getCiudad());
+			pstm.setString(7, cliente.getDireccion());
+			pstm.setString(8, cliente.getTelefono());
+			pstm.setString(9, cliente.getEmail());
+			pstm.executeUpdate();
+			pstm.close();
+			// Actualizar contador
+			sql = "update contador set int_contitem = int_contitem + 1 "
+							+ "where vch_conttabla='Cliente'";
+			stm.executeUpdate(sql);
+			stm.close();
+			cn.commit(); // Confirma Tx
+			cliente.setCodigo(codigo);
+		} catch (SQLException e) {
+			try {
+				cn.rollback();
+			} catch (Exception e1) {
+			}
+			throw new RuntimeException(e.getMessage());
+		} catch (Exception e) {
+			try {
+				cn.rollback();
+			} catch (Exception e1) {
+			}
+			throw new RuntimeException("Error en proceso de creación de cuenta.");
+		} finally {
+			try {
+				cn.close();
+			} catch (Exception e) {
+			}
+		}
+
 	}
 
 	@Override
