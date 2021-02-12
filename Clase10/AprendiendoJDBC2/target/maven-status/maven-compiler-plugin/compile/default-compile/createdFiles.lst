@@ -1,0 +1,13 @@
+prueba\Prueba03.class
+pe\igh\app\db\AccesoDB.class
+prueba\Prueba04.class
+pe\igh\app\model\Cliente.class
+pe\igh\app\service\impl\ClienteImpl.class
+prueba\Prueba02.class
+pe\igh\app\service\impl\JdbcUtil.class
+pe\igh\app\service\spec\RowMapper.class
+pe\igh\app\service\spec\ClienteSpec.class
+pe\igh\app\service\spec\ConsultasSpec.class
+prueba\Prueba01.class
+pe\igh\app\service\impl\ConsultasImpl.class
+prueba\Prueba05.class
