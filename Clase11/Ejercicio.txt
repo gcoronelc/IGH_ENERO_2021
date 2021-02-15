@@ -1,0 +1,6 @@
+
+Implementar la capade servicio y prieba del procedimiento: usp_egcc_retiro
+Implementar la solucion para crear una nueva cuenta:
+  - Se crea la cuenta
+  - Se registra el primer movimiento de apertura de cuenta 
+  
