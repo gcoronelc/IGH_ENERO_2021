@@ -13,7 +13,7 @@
   Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
   
 - Expresiones Lambda y Strem en Java 8: 
-  ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL
+  ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL, UTCAÑE MANCILLA JOSE YAIR
   Jyoti Enrique Rospigliosi Pinedo
   
 - Principios SOLID: 
@@ -22,14 +22,23 @@
 - Patron DAO: 
   Breiner Correa, CHOZO SEGOVIA RENZO DANIEL 
   
-- Manejo de claves seguras en la BD Oracle: 
-  Miguel Ugarte, SARANGO ARAUJO JOHN LEE, UTCAÑE MANCILLA JOSE YAIR 
+- Manejo de claves seguras en la BD Oracle para App: 
+  Miguel Ugarte, SARANGO ARAUJO JOHN LEE,  
+
+
+-- Parte Web
+-------------------------------------------
+- HTML 5: Principales caracteristicas: Miguel Ugarte, SARANGO ARAUJO JOHN LEE
+- BootStrap 4: Principales caracteristicas: ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL, UTCAÑE MANCILLA JOSE YAIR
+- Ajax con JQuer y JSON: Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
+- Validación con el API de Google: Breiner Correa, CHOZO SEGOVIA RENZO DANIEL
+- JAAS: ALEC TABOADA TANIGUCHI, CATACORA MAMANI D’ANGELO JOHNNY
 
 
 
 
-
+- Java Reflection
 - Manejo de documentos XML: 
 - Patrón Inyección de Dependencias: 
-- Manejo de Datos en Formato JSON: 
+-  
 - Patrón facade: 
