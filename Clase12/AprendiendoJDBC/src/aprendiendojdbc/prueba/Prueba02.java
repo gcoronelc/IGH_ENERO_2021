@@ -3,6 +3,7 @@ package aprendiendojdbc.prueba;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 /**
  * @author Eric Gustavo Coronel Castillo
  * @blog www.desarrollasoftware.com
