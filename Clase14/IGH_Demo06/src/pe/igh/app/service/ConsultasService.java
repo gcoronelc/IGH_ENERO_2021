@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -84,4 +85,29 @@ public class ConsultasService  {
 		return lista;
 	}
 
+	
+	public List<Map<String, ?>> getMovimientos(String cuenta) {
+		List<Map<String, ?>> lista = new ArrayList<>();
+		Connection cn = null;
+		try {
+			cn = AccesoDB.getConnection();
+			String sql = "select cuencodigo, monenombre, cuensaldo, cuenestado, "
+					  + "movinumero, movifecha, moviimporte, tipocodigo, tiponombre "
+					  + "from EUREKA.v_movimientos where cuencodigo = ?";
+			PreparedStatement pstm = cn.prepareStatement(sql);
+			pstm.setString(1, cuenta);
+			ResultSet rs = pstm.executeQuery();
+			lista = JdbcUtil.rsToList(rs);
+			rs.close();
+			pstm.close();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				cn.close();
+			} catch (Exception e) {
+			}
+		}
+		return lista;
+	}
 }
