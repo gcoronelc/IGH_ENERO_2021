@@ -17,6 +17,10 @@ https://github.com/breinerbca99/IGH-Repositorio-Breiner
 3DA PARTE
 -------------------------------------------------------------
 https://github.com/IGH-CONVOCATORIA
-
+https://github.com/AlecTaboada/Capacitacion_IGH
+https://github.com/adrianmircor/IGH_ENERO_2021
+https://github.com/adrianmircor/Ajax-GET
+https://github.com/Abigail03-aldave/IGH_Repositorio_TAC
+https://github.com/breinerbca99/Login-con-Google-y-Facebook
 
 

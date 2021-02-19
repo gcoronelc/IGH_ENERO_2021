@@ -38,14 +38,33 @@
 
 -- Spring Boot
 -------------------------------------------
-- Tecnicas de autenticación y codigo captcha
-  . Validación con Google, 1 y 2 toques
-  . Validación con token via celular
-  . Otros
-- 
-- 
-- 
+- Frameworks agiles: Scrum, Kanban, Lean, XP, SAFE, AUP => Miranda, Utcañe, Abigail
+- Node.JS y Angular => Catacora, Taboada
+- Docker, DevOps => Ugarte, Sandoval
+- Servicios Web => Chozo, Miranda
+- EJB con JPA => Catacora, Taboada
 
+
+
+FrontEnd
+HTML5,CSS3,JavaScript, TypeScript, Sass, Bootstrap
+React, Vue, Angular
+BackEnd
+Lenguajes 
+Java (Spring, EJB, JPA, JMS, JSF, Struts, iBatis, Hibernate) - Uso principal
+Net (C# Core2), PHP (Laravel), Python (Django)  - Uso secundario
+Database (MYSQL, MSSQL, Oracle)
+NoSQL (MongoDB, Cassandra, Redis, Neo4j)
+WebServer/ApplicationServer (Tomcat, Ngnix, WAS, OWLS, Widfly-Jboss)
+WebServices (SOAP - JAXWS, ApacheCXF , RestFul)
+Authentication (OWASP, OAuth 2.0, JSON Web Token(JWT))
+Mobile (Android, iOS)
+Herramientas Git (GitHub, GitLab), Maven, Sonar, JMeter, SOAPUI, PostMan
+Metodos/Metodologias/GobiernoIT (Conocimiento general)
+Agile/ScrumMaster
+PMP, ITIL, COBIT
+Transformacion Digital
+BIAN (Marco estándar para Banca-Fintech)
 
 
 
