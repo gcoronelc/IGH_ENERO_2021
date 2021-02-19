@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>CONSULTA DE CLIENTES</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <h2>CONSULTA DE CLIENTES</h2>
+      <div>
+         <form id="form1">
+            <label>Nombre:</label>
+            <input type="text" name="nombre"/>
+            <button type="button" id="btnConsultar">Consultar</button>
+         </form>
+      </div>
+      <div id="divResultado" style="display: none; padding: 15px;">
+         <div>
+            <div id="divBotones" style="float: right;"></div>
+         </div>
+         
+         <table id="tablaResultado" class="display">
+            <thead>
+               <tr>
+                  <th>CODIGO</th>
+                  <th>PATERNO</th>
+                  <th>MATERNO</th>
+                  <th>NOMBRE</th>
+                  <th>EMAIL</th>
+               </tr>
+            </thead>
+            <tbody id="tablaDatos">
+            </tbody>
+         </table>
+      </div>
+      <script>
+         $("#btnConsultar").click(function () {
+            $("#divResultado").hide();
+            var data = $("#form1").serialize();
+            $.get("Consulta", data, function (lista) {
+               $("#tablaDatos").empty();
+               $("#tablaResultado").DataTable().clear();
+               $("#tablaResultado").DataTable().destroy();
+               $.each(lista, function (index, rec) {
+                  var row = "<tr>";
+                  row += "<td>" + rec.codigo + "</td>";
+                  row += "<td>" + rec.paterno + "</td>";
+                  row += "<td>" + rec.materno + "</td>";
+                  row += "<td>" + rec.nombre + "</td>";
+                  row += "<td>" + rec.email + "</td>";
+                  row += "</tr>";
+                  $("#tablaDatos").append(row);
+               });
+               fnPintarTabla();
+               $("#divResultado").show();
+            });
+         });
+         function fnPintarTabla() {
+            var v_tabla = $("#tablaResultado").DataTable({
+               "pageLength": 5,
+               "lengthMenu": [5, 10, 20, 30, 40],
+               "ordering": true,
+               "language": {
+                  "lengthMenu": "Agrupar _MENU_ filas por página",
+                  "zeroRecords": "No existen registros",
+                  "info": "Página _PAGE_ de _PAGES_",
+                  "infoEmpty": "No hay registros disponibles.",
+                  "infoFiltered": "(filtered from _MAX_ total records)",
+                  "search": "Filtrar:",
+                  "paginate": {
+                     "first": "Primero",
+                     "last": "Ultimo",
+                     "next": "Siguiente",
+                     "previous": "Anterior"
+                  }
+               }
+
+            });
+
+            var v_contenedor = $("#divBotones");
+
+            var botones = ['copyHtml5','excelHtml5','csvHtml5','pdfHtml5'];
+            
+            new $.fn.dataTable.Buttons(v_tabla, {
+               buttons: botones
+            });
+            v_contenedor.html('');
+            v_tabla.buttons().container().appendTo(v_contenedor);
+            
+         }
+
+      </script>
+   </body>
+</html>

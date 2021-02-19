@@ -29,10 +29,22 @@
 -- Parte Web
 -------------------------------------------
 - HTML 5: Principales caracteristicas: Miguel Ugarte, SARANGO ARAUJO JOHN LEE
-- BootStrap 4: Principales caracteristicas: ALDAVE HUAMAN FLOR ABIGAIL, HERRERA BARBOZA MIGUEL ANGEL, UTCAÑE MANCILLA JOSE YAIR
+- BootStrap 4: Principales caracteristicas: ALDAVE HUAMAN FLOR ABIGAIL, UTCAÑE MANCILLA JOSE YAIR
 - Ajax con JQuer y JSON: Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
 - Validación con el API de Google: Breiner Correa, CHOZO SEGOVIA RENZO DANIEL
 - JAAS: ALEC TABOADA TANIGUCHI, CATACORA MAMANI D’ANGELO JOHNNY
+
+
+
+-- Spring Boot
+-------------------------------------------
+- Tecnicas de autenticación y codigo captcha
+  . Validación con Google, 1 y 2 toques
+  . Validación con token via celular
+  . Otros
+- 
+- 
+- 
 
 
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>REGISTRAR DEPOSITO</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <h2>REGISTRAR DEPOSITO</h2>
+      <div>
+         <form id="form1">
+            <label>Cuenta:</label>
+            <input type="text" name="cuenta" /><br/>
+            <label>Importe:</label>
+            <input type="text" name="importe" /><br/>
+            <label>Empleado:</label>
+            <input type="text" name="empleado" /><br/>
+            <button type="button" id="btnProcesar">Procesar</button>
+         </form>
+      </div>
+      <script>
+         
+         $("#btnProcesar").click(function(){
+            
+            var data = $("#form1").serialize();
+            $.post("Deposito",data,function(estado){
+               alert(estado);
+            });
+            
+         });
+         
+      </script>
+   </body>
+</html>

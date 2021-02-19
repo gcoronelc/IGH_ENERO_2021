@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>EUREKA BANK</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/egcc.css" rel="stylesheet" type="text/css"/>
+      <link href="DataTables/DataTables-1.10.18/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+      <link href="DataTables/Buttons-1.5.4/css/buttons.dataTables.css" rel="stylesheet" type="text/css"/>
+   </head>
+   <body>
+      <h1>EUREKA BANK</h1>
+      <div>
+         <a href="javascript: cargarPagina('consulta.html');">Consulta</a>
+         <a href="javascript: cargarPagina('deposito.html');">Depósito</a>
+      </div>
+      <div id="divContenido"></div>
+      <script src="jquery/jquery.js" type="text/javascript"></script>
+      <script src="DataTables/DataTables-1.10.18/js/jquery.dataTables.js" type="text/javascript"></script>
+      <script src="DataTables/Buttons-1.5.4/js/dataTables.buttons.js" type="text/javascript"></script>
+      <script src="JS/jszip.js" type="text/javascript"></script>
+      <script src="JS/pdfmake.min.js" type="text/javascript"></script>
+      <script src="JS/vfs_fonts.js" type="text/javascript"></script>
+      <script src="DataTables/Buttons-1.5.4/js/buttons.html5.js" type="text/javascript"></script>
+      <script>
+         
+         function cargarPagina(pagina){
+            $("#divContenido").load(pagina);
+         }
+         
+      </script>
+   </body>
+</html>
