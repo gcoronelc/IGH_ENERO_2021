@@ -27,7 +27,7 @@
 
 
 -- Parte Web
--------------------------------------------
+--------------------------------------------------------------------------------------------------
 - HTML 5: Principales caracteristicas: Miguel Ugarte, SARANGO ARAUJO JOHN LEE
 - BootStrap 4: Principales caracteristicas: ALDAVE HUAMAN FLOR ABIGAIL, UTCAÑE MANCILLA JOSE YAIR
 - Ajax con JQuer y JSON: Adrian Miranda, SANDOVAL TIRADO JOSÉ ENRIQUE 
@@ -35,14 +35,15 @@
 - JAAS: ALEC TABOADA TANIGUCHI, CATACORA MAMANI D’ANGELO JOHNNY
 
 
-
 -- Spring Boot
--------------------------------------------
+------------------------------------------------------------------------------------
 - Frameworks agiles: Scrum, Kanban, Lean, XP, SAFE, AUP => Miranda, Utcañe, Abigail
 - Node.JS y Angular => Catacora, Taboada
 - Docker, DevOps => Ugarte, Sandoval
 - Servicios Web => Chozo, Miranda
 - EJB con JPA => Catacora, Taboada
+
+
 
 
 
