@@ -44,7 +44,12 @@
 - EJB con JPA => Catacora, Taboada
 
 
-
+-- Spring Boot - Parte 2
+-----------------------------------------------------------
+- React: Miranda 
+- Spring Security: Taboada 
+- JWT: Chozo 
+- Programación Reactiva: Ugarte 
 
 
 
