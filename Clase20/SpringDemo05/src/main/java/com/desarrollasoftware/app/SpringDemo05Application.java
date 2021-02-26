@@ -10,12 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.desarrollasoftware.app.model.ClienteModel;
 import com.desarrollasoftware.app.repository.DemoRepository;
+import com.desarrollasoftware.app.repository.ProcedureSaldoCuenta;
 
 @SpringBootApplication
 public class SpringDemo05Application implements CommandLineRunner {
 
 	@Autowired
 	private DemoRepository demoRepository;
+	
+	@Autowired
+	private ProcedureSaldoCuenta saldoCuenta;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDemo05Application.class, args);
@@ -55,6 +59,7 @@ public class SpringDemo05Application implements CommandLineRunner {
 		}
 		
 		// Prueba de TX
+		/*
 		ClienteModel clie1 = new ClienteModel();
 		clie1.setPaterno("Torres");
 		clie1.setMaterno("Ramos");
@@ -69,7 +74,21 @@ public class SpringDemo05Application implements CommandLineRunner {
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
+		*/
 		
+		// Prueba de Tx con SP
+		/*
+		try {
+			demoRepository.retiro("00100001", 794, "123456", "0004");
+			System.out.println("Proceso ok.");
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		*/
+		
+		// Procediento con parátros de salida
+		double saldo = saldoCuenta.ejecutar("00100001");
+		System.out.println("Saldo: " + saldo);
 
 	}
 

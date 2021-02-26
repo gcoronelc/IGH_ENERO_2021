@@ -81,15 +81,13 @@ public class DemoRepository {
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void ejmTX(ClienteModel bean) {
 		// Actualizar contador y bloquea la fila
-		String sql = "update contador set int_contitem = int_contitem + 1 " 
-				+ "where vch_conttabla = 'Cliente' ";
+		String sql = "update contador set int_contitem = int_contitem + 1 " + "where vch_conttabla = 'Cliente' ";
 		int filas = jdbcTemplate.update(sql);
 		if (filas == 0) {
 			throw new RuntimeException("El contador de la tabla CLIENTE no existe.");
 		}
 		// Leer datos para la generación del codigo
-		sql = "select int_contitem, int_contlongitud from contador " 
-		+ " where vch_conttabla = 'Cliente' ";
+		sql = "select int_contitem, int_contlongitud from contador " + " where vch_conttabla = 'Cliente' ";
 		Map<String, Object> map = jdbcTemplate.queryForMap(sql);
 		int cont = Integer.parseInt(map.get("int_contitem").toString());
 		int size = Integer.parseInt(map.get("int_contlongitud").toString());
@@ -98,15 +96,18 @@ public class DemoRepository {
 		String codigo = String.format(formato, cont);
 		System.out.println("Código: " + codigo);
 		// Insertar el nuevo cliente
-		sql = "insert into cliente(chr_cliecodigo, vch_cliepaterno, " 
-				+ "vch_cliematerno, vch_clienombre, chr_cliedni, "
-				+ "vch_clieciudad, vch_cliedireccion, vch_clietelefono," 
-				+ "vch_clieemail) values(?,?,?,?,?,?,?,?,?)";
+		sql = "insert into cliente(chr_cliecodigo, vch_cliepaterno, " + "vch_cliematerno, vch_clienombre, chr_cliedni, "
+				+ "vch_clieciudad, vch_cliedireccion, vch_clietelefono," + "vch_clieemail) values(?,?,?,?,?,?,?,?,?)";
 		Object[] args = { codigo, bean.getPaterno(), bean.getMaterno(), bean.getNombre(), bean.getDni(),
 				bean.getCiudad(), bean.getDireccion(), bean.getTelefono(), bean.getEmail() };
 		jdbcTemplate.update(sql, args);
 		// Retornar el codigo
 		bean.setCodigo(codigo);
+	}
+
+	public void retiro(String cuenta, double importe, String clave, String codEmp) {
+		Object[] args = { cuenta, importe,  codEmp, clave };
+		jdbcTemplate.update("call usp_egcc_retiro(?, ?, ?, ?)", args);
 	}
 
 }
