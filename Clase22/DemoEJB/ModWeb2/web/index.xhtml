@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <h:form>
+      <h1>VENTA</h1>
+      <h:panelGrid columns="2">
+
+        <h:outputLabel value="Precio"/>
+        <h:inputText value="#{appController.precio}"/>
+
+        <h:outputLabel value="Cantidad"/>
+        <h:inputText value="#{appController.cantidad}"/>
+
+      </h:panelGrid>
+      <h:commandButton value="Procesar" action="#{appController.doProcesar()}"/>
+
+      <c:if test="${appController.ventaDto != null}">
+        <h:panelGrid columns="2">
+
+          <f:facet name="header">
+            <h:outputText value="Resultado"/>
+          </f:facet>
+
+          <h:outputLabel value="Precio"/>
+          <h:outputText value="#{appController.ventaDto.precio}"/>
+
+          <h:outputLabel value="Cantidad"/>
+          <h:outputText value="#{appController.ventaDto.cantidad}"/>
+
+          <h:outputLabel value="Importe"/>
+          <h:outputText value="#{appController.ventaDto.importe}"/>
+
+          <h:outputLabel value="Impuesto"/>
+          <h:outputText value="#{appController.ventaDto.impuesto}"/>
+
+          <h:outputLabel value="Total"/>
+          <h:outputText value="#{appController.ventaDto.total}"/>
+
+        </h:panelGrid>
+      </c:if>
+
+    </h:form>
+  </h:body>
+</html>
+
