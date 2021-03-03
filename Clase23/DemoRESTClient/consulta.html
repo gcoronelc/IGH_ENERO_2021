@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>CONSULTAR CLIENTES</h1>
+      <input type="button" value="Consultar" id="btnConsultar" />
+    </div>
+    <div id="divRespuesta"></div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#btnConsultar").click(fnConsultar);
+      });
+
+      function fnConsultar() {
+        $.ajax({
+          type: "GET",
+          url: "http://localhost:8080/api/v1/clientes",
+          dataType: "json",
+          success: function (result, status, xhr) {
+            let mensaje = "";
+            for (let i = 0; i < result.length; i++) {
+              mensaje += result[i].nombre + "<br/>";
+            }
+            $("#divRespuesta").html(mensaje);
+          },
+          error: function (xhr, status, error) {
+            alert(
+              "Result: " +
+                status +
+                " " +
+                error +
+                " " +
+                xhr.status +
+                " " +
+                xhr.statusText
+            );
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
