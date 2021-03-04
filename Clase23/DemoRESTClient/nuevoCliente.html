@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>NUEVO CLIENTE</h1>
+      <input type="button" value="Registrar cliente" id="btnGrabar" />
+    </div>
+    <div>
+      <form>
+        <table>
+          <tr>
+            <td>Paterno:</td>
+            <td><input type="text" name="paterno" id="paterno" /></td>
+          </tr>
+          <tr>
+            <td>Materno:</td>
+            <td><input type="text" name="materno" id="materno" /></td>
+          </tr>
+          <tr>
+            <td>Nombre:</td>
+            <td><input type="text" name="nombre" id="nombre" /></td>
+          </tr>
+          <tr>
+            <td>DNI:</td>
+            <td><input type="text" name="dni" id="dni" /></td>
+          </tr>
+          <tr>
+            <td>Ciudad:</td>
+            <td><input type="text" name="ciudad" id="ciudad" /></td>
+          </tr>
+          <tr>
+            <td>Dirección:</td>
+            <td><input type="text" name="direccion" id="direccion" /></td>
+          </tr>
+          <tr>
+            <td>Teléfono:</td>
+            <td><input type="text" name="telefono" id="telefono" /></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" id="email" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div id="divRespuesta"></div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#btnGrabar").click(fnGrabar);
+      });
+
+      function fnGrabar() {
+        // Datos
+        let paterno = $("#paterno").val();
+        let materno = $("#materno").val();
+        let nombre = $("#nombre").val();
+        let dni = $("#dni").val();
+        let ciudad = $("#ciudad").val();
+        let direccion = $("#direccion").val();
+        let telefono = $("#telefono").val();
+        let email = $("#email").val();
+        // Proceso
+        $.ajax({
+          url: "http://localhost:8080/api/v1/clientes",
+          type: "POST",
+          data: JSON.stringify({
+            paterno: paterno,
+            materno: materno,
+            nombre: nombre,
+            dni: dni,
+            ciudad: ciudad,
+            direccion: direccion,
+          }),
+          contentType: "application/json; charset=utf-8",
+          success: function (data) {
+            console.log(data);
+            alert("Registro aregado exitosamente !!!\nCódigo: " + data.codigo);
+          },
+          failure: function (data) {
+            console.log(data);
+            alert(data.responseJSON.message);
+          },
+          error: function (data) {
+            console.log(data);
+            alert(data.responseJSON.message);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
