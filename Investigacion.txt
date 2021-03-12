@@ -41,7 +41,7 @@
 - Node.JS y Angular => Catacora, Taboada
 - Docker, DevOps => Ugarte, Sandoval
 - Servicios Web => Chozo, Miranda
-- EJB con JPA => Catacora, Taboada
+- EJB con JPA => Catacora, Taboada   (Pendiente)
 
 
 -- Spring Boot - Parte 2
